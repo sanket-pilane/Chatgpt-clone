@@ -12,7 +12,7 @@ Stream<http.Response> getChatGptResponseRepo(
   }
 
   http.Request req = http.Request(
-      "POST", Uri.parse("http://localhost:5157/api/generate_response"));
+      "POST", Uri.parse("http://10.0.2.2:5157/api/generate_response"));
 
   req.headers['Accept'] = "text/event-stream";
   req.headers['Cache-control'] = "no-cache";

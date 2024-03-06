@@ -15,6 +15,7 @@ class ChatPage extends StatefulWidget {
 }
 
 class _ChatPageState extends State<ChatPage> {
+  bool isChatStarted = false;
   ChatBloc chatBloc = ChatBloc();
   final controller = TextEditingController();
   @override
@@ -43,6 +44,7 @@ class _ChatPageState extends State<ChatPage> {
                   padding: const EdgeInsets.only(top: 10),
                   itemCount: chatBloc.cachedMessage.length,
                   itemBuilder: (context, index) {
+                    isChatStarted = true;
                     return Container(
                       decoration: BoxDecoration(
                           color:
@@ -90,17 +92,23 @@ class _ChatPageState extends State<ChatPage> {
                     );
                   },
                 )),
-                Container(
-                    padding: const EdgeInsets.all(16),
-                    height: 100,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: Prompts.prompts.length,
-                      itemBuilder: (context, index) {
-                        final prompt = Prompts.prompts[index];
-                        return PromtContainer(prompt: prompt);
-                      },
-                    )),
+                isChatStarted == false
+                    ? Container(
+                        padding: const EdgeInsets.all(16),
+                        height: 100,
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: Prompts.prompts.length,
+                          itemBuilder: (context, index) {
+                            final prompt = Prompts.prompts[index];
+                            return InkWell(
+                                onTap: () {
+                                  controller.text = prompt;
+                                },
+                                child: PromtContainer(prompt: prompt));
+                          },
+                        ))
+                    : Container(),
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
                   margin: const EdgeInsets.only(left: 16, right: 16),
@@ -130,6 +138,8 @@ class _ChatPageState extends State<ChatPage> {
                             controller.clear();
                             chatBloc.add(ChatNewPromtEvent(prompt: text));
                           }
+
+                          FocusScope.of(context).unfocus();
                         },
                         child: const Icon(
                           Icons.send_rounded,

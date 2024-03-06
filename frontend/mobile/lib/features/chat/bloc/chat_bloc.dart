@@ -34,7 +34,6 @@ class ChatBloc extends Bloc<ChatEvent, ChatState> {
         for (String s in res.body.split("/n")) {
           String jsonDataString = s.replaceFirst("data: ", "");
           Map<String, dynamic> data = jsonDecode(jsonDataString);
-          log(data.toString());
 
           add(ChatNewContentGeneratedEvent(content: data['data']));
         }
@@ -53,7 +52,7 @@ class ChatBloc extends Bloc<ChatEvent, ChatState> {
 
     cachedMessage.last = ChatMessageModel(
         role: "assistant", content: msgModel.content + content);
-    log(cachedMessage.last.content);
+
     emit(NewMessageGeneratedState());
   }
 }
