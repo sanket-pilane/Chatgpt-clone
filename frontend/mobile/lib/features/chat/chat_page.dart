@@ -109,44 +109,47 @@ class _ChatPageState extends State<ChatPage> {
                           },
                         ))
                     : Container(),
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  margin: const EdgeInsets.only(left: 16, right: 16),
-                  decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.1),
-                      borderRadius: BorderRadius.circular(10)),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: TextField(
-                          controller: controller,
-                          cursorColor: Colors.white,
-                          decoration: const InputDecoration(
-                              border: OutlineInputBorder(
-                                  borderSide: BorderSide.none),
-                              filled: false,
-                              hintText: "Ask me anything...!"),
+                Padding(
+                  padding: const EdgeInsets.only(top: 10.0),
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    margin: const EdgeInsets.only(left: 16, right: 16),
+                    decoration: BoxDecoration(
+                        color: Colors.white.withOpacity(0.1),
+                        borderRadius: BorderRadius.circular(10)),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: TextField(
+                            controller: controller,
+                            cursorColor: Colors.white,
+                            decoration: const InputDecoration(
+                                border: OutlineInputBorder(
+                                    borderSide: BorderSide.none),
+                                filled: false,
+                                hintText: "Ask me anything...!"),
+                          ),
                         ),
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      InkWell(
-                        onTap: () {
-                          if (controller.text.isNotEmpty) {
-                            String text = controller.text;
-                            controller.clear();
-                            chatBloc.add(ChatNewPromtEvent(prompt: text));
-                          }
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        InkWell(
+                          onTap: () {
+                            if (controller.text.isNotEmpty) {
+                              String text = controller.text;
+                              controller.clear();
+                              chatBloc.add(ChatNewPromtEvent(prompt: text));
+                            }
 
-                          FocusScope.of(context).unfocus();
-                        },
-                        child: const Icon(
-                          Icons.send_rounded,
-                          color: Colors.white,
+                            FocusScope.of(context).unfocus();
+                          },
+                          child: const Icon(
+                            Icons.send_rounded,
+                            color: Colors.white,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
                 const SizedBox(

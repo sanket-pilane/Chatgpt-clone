@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/design/app_theme.dart';
+import 'package:mobile/features/auth/sign_up.dart';
 import 'package:mobile/features/onboarding/onboarding_page.dart';
 
 void main() {
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: AppTheme.darkTheme,
       debugShowCheckedModeBanner: false,
-      home: const OnboardingScreen(),
+      home: const SignUpPage(),
     );
   }
 }

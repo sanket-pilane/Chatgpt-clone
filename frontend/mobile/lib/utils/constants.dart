@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class Prompts {
   // List of prompts for your Flutter app
   static final prompts = [
