@@ -1,1 +1,3 @@
-backend/node_module
+/backend/node_module/
+frontend/mobile/build
+/backend/.env
