@@ -39,6 +39,8 @@ dependencies:
   flutter_bloc:
   http: ^1.1.0
   lottie: ^1.4.0
+  firebase_auth: ^4.17.7
+  firebase_core: ^2.26.0
 
 dev_dependencies:
   flutter_test:
