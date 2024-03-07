@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/design/app_theme.dart';
 import 'package:mobile/features/auth/sign_up.dart';
-import 'package:mobile/features/onboarding/onboarding_page.dart';
 
-void main() {
+void main() async {
   runApp(const MyApp());
 }
 

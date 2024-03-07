@@ -18,9 +18,12 @@ class MyTextField extends StatelessWidget {
         cursorColor: Colors.white,
         controller: controller,
         decoration: InputDecoration(
+          fillColor: Colors.grey.shade600,
+          filled: true,
           enabledBorder: const OutlineInputBorder(
             borderSide: BorderSide(
               color: Colors.white,
+              width: 1.5,
             ),
             borderRadius: BorderRadius.all(
               Radius.circular(
@@ -28,16 +31,16 @@ class MyTextField extends StatelessWidget {
               ),
             ),
           ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: const BorderRadius.all(
+          focusedBorder: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(
               Radius.circular(10),
             ),
-            borderSide: BorderSide(color: Colors.blue.shade500),
+            borderSide: BorderSide(color: Colors.black),
           ),
           prefixIcon: Icon(icon),
-          hintText: hintText,
-          hintStyle: TextStyle(
-            color: Colors.grey.shade300,
+          labelText: hintText,
+          labelStyle: const TextStyle(
+            color: Colors.white,
             fontWeight: FontWeight.w500,
           ),
         ),

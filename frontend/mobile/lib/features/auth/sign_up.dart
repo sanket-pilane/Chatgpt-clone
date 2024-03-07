@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
+
 import 'package:mobile/components/my_button.dart';
-import 'package:mobile/components/text_fields.dart';
+import 'package:mobile/components/text_field.dart';
+
 import 'package:mobile/features/auth/login.dart';
 
 class SignUpPage extends StatefulWidget {
@@ -19,6 +20,7 @@ class _SignUpPageState extends State<SignUpPage> {
     final TextEditingController confirmPasswordController =
         TextEditingController();
     return Scaffold(
+      backgroundColor: Colors.grey.shade800,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 30.0),
@@ -27,13 +29,10 @@ class _SignUpPageState extends State<SignUpPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Spacer(),
-              Center(
-                child: Lottie.asset(
-                  "assets/lottie/login.json",
-                  height: 100,
-                  width: 100,
-                  animate: true,
-                  repeat: false,
+              const Center(
+                child: Icon(
+                  Icons.lock,
+                  size: 60,
                 ),
               ),
               const SizedBox(
@@ -45,7 +44,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   children: [
                     MyTextField(
                       controller: usernameController,
-                      hintText: "username",
+                      hintText: "Username",
                       icon: Icons.person_outline,
                     ),
                     MyTextField(

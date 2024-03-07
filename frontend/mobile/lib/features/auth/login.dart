@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-// import 'package:lottie/lottie.dart';
+
 import 'package:mobile/components/my_button.dart';
-import 'package:mobile/components/text_fields.dart';
+import 'package:mobile/components/text_field.dart';
+
 import 'package:mobile/features/auth/sign_up.dart';
 
 class LoginPage extends StatelessWidget {
@@ -13,6 +14,7 @@ class LoginPage extends StatelessWidget {
     final TextEditingController passwordController = TextEditingController();
 
     return Scaffold(
+      backgroundColor: Colors.grey.shade800,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 30.0),
@@ -21,14 +23,11 @@ class LoginPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Spacer(),
-              // Center(
-              //   child: Lottie.asset(
-              //     "assets/lottie/login.json",
-              //     height: 100,
-              //     width: 100,
-              //     animate: true,
-              //   ),
-              // ),
+              const Center(
+                  child: Icon(
+                Icons.lock,
+                size: 60,
+              )),
               const SizedBox(
                 height: 20,
               ),
