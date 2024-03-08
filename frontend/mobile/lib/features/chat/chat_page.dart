@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:mobile/components/my_drawer.dart';
 import 'package:mobile/components/prompt_container.dart';
 import 'package:mobile/design/app_color.dart';
 import 'package:mobile/utils/constants.dart';
@@ -27,13 +28,11 @@ class _ChatPageState extends State<ChatPage> {
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
-        leading: const Icon(Icons.menu),
       ),
+      drawer: MyDrawer(),
       body: BlocConsumer<ChatBloc, ChatState>(
         bloc: chatBloc,
-        listener: (context, state) {
-          // TODO: implement listener
-        },
+        listener: (context, state) {},
         builder: (context, state) {
           return Container(
             decoration: const BoxDecoration(),

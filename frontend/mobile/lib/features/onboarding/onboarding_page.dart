@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:mobile/design/app_color.dart';
 import 'package:mobile/features/chat/chat_page.dart';
+import 'package:mobile/features/onboarding/auth_page.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});

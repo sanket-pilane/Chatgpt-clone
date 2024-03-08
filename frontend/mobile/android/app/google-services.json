@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "192434701878",
+    "project_id": "chatgpt-clone-fcfa9",
+    "storage_bucket": "chatgpt-clone-fcfa9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:192434701878:android:e432146f82311a32a6ba97",
+        "android_client_info": {
+          "package_name": "com.example.mobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiFhqYM-LUrvSeMcyKTBFl6A1-aVjcfZk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
