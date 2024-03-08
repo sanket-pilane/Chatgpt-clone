@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+
+import 'package:gif_view/gif_view.dart';
+import 'package:lottie/lottie.dart';
 import 'package:mobile/components/my_drawer.dart';
 import 'package:mobile/components/prompt_container.dart';
 import 'package:mobile/design/app_color.dart';
@@ -17,19 +20,33 @@ class ChatPage extends StatefulWidget {
 
 class _ChatPageState extends State<ChatPage> {
   bool isChatStarted = false;
+  bool isPlaying = false;
+
   ChatBloc chatBloc = ChatBloc();
   final controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          Icon(
+            Icons.new_label_outlined,
+            color: Colors.grey.shade600,
+          ),
+          const SizedBox(
+            width: 4,
+          ),
+          const Icon(
+            Icons.more_vert,
+          )
+        ],
         title: const Text(
           "ChatGPT",
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
       ),
-      drawer: MyDrawer(),
+      drawer: const MyDrawer(),
       body: BlocConsumer<ChatBloc, ChatState>(
         bloc: chatBloc,
         listener: (context, state) {},
@@ -69,9 +86,12 @@ class _ChatPageState extends State<ChatPage> {
                               : Padding(
                                   padding: const EdgeInsets.only(right: 16.0),
                                   child: SizedBox(
-                                    child: Image.asset(
-                                      "assets/images/tony.jpeg",
-                                      height: 34,
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(50),
+                                      child: Image.asset(
+                                        "assets/images/tony.jpeg",
+                                        height: 34,
+                                      ),
                                     ),
                                   ),
                                 ),
